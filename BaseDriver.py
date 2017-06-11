@@ -15,7 +15,7 @@ class BaseDriver:
     def navigateToUrl(self, url):
         self.browser.get(url)
 
-
 class ChromeDriver(BaseDriver):
     def __init__(self):
         super().__init__("C:\SeleniumDrivers\chromedriver.exe", "webdriver.chrome.driver")
+

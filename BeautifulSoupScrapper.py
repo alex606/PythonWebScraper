@@ -5,12 +5,9 @@ import csv
 from datetime import datetime
 from bs4 import BeautifulSoup
 
-
-class BeautifulSoupScrapper(unittest.TestCase):
+class BeautifulSoupScrapper:
 
     def scrapeSnp500(self):
-
-        data = []
 
         quote_pages = [
             'http://www.bloomberg.com/quote/SPX:IND',
@@ -18,7 +15,7 @@ class BeautifulSoupScrapper(unittest.TestCase):
             'https://www.bloomberg.com/quote/MSFT:US',
             'https://www.bloomberg.com/quote/BRK/B:US'
         ]
-
+        data = []
         for quote_page in quote_pages:
 
             page = urllib.request.urlopen(quote_page)
@@ -36,8 +33,3 @@ class BeautifulSoupScrapper(unittest.TestCase):
             writer = csv.writer(csv_file)
             for name, price in data:
                 writer.writerow([name, price, datetime.now()])
-
-def main():
-    unittest.main()
-if __name__ == '__main__':
-    main()
