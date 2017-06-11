@@ -6,7 +6,7 @@ from datetime import datetime
 from bs4 import BeautifulSoup
 
 
-class WebScrapper(unittest.TestCase):
+class BeautifulSoupScrapper(unittest.TestCase):
 
     def scrapeSnp500(self):
 
